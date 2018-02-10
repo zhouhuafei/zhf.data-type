@@ -62,9 +62,9 @@ test(`datatType.isError(new Error()) // true`, () => {
     expect(datatType.isError(new Error())).toEqual(true);
 });
 
-test(`datatType.isSymbol(Symbol()) // true`, () => {
+test(`datatType.isSymbol(Symbol('test')) // true`, () => {
     // Symbol 的应用
-    const name = Symbol();
+    const name = Symbol('learn');
     const obj = {
         name: 'zhouhuafei - name',
         [name]: 'zhouhuafei - Symbol',
@@ -74,5 +74,5 @@ test(`datatType.isSymbol(Symbol()) // true`, () => {
     // Symbol值作为对象属性名时，不能用点运算符。
     // Symbol值作为对象属性名时，不能被遍历。
     // 没感觉到Symbol有什么巨大的优势 以前obj[name]就是obj.name 用了Symbol之后obj[name]就不是obj.name了。
-    expect(datatType.isSymbol(Symbol())).toEqual(true);
+    expect(datatType.isSymbol(Symbol('test'))).toEqual(true);
 });
